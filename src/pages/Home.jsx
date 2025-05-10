@@ -28,7 +28,7 @@ export default function Home() {
 
     // Fetch athletes on filter change
     useEffect(() => {
-        fetch(`/api/athletes/${year}/${season}/${gender}`)
+        fetch(`https://api.fairport.run/athletes/${year}/${season}/${gender}`)
             .then((r) => r.json())
             .then((json) => {
                 const filtered = Object.fromEntries(
@@ -89,7 +89,7 @@ export default function Home() {
     };
     const fetchRelays = () => {
         if (legs.some(l => !l)) return;
-        fetch('/api/relays', {
+        fetch('https://api.fairport.run/relays', {
             method: 'POST', headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ year, season, gender, legs })
         })
