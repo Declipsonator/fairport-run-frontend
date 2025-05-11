@@ -99,7 +99,7 @@ export default function Home() {
 
     // function to fetch athletes\ n
 const fetchAthletes = () => {
-    fetch(`/api/athletes/${year}/${season}/${gender}`)
+    fetch(`https://api.fairport.run/athletes/${year}/${season}/${gender}`)
         .then(r => r.json())
         .then(json => {
             const filtered = Object.fromEntries(
